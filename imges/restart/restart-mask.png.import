@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://uojyu1feuamq"
+path="res://.godot/imported/restart-mask.png-1b259e2c8db63b76304d8d32ba80879d.res"
+
+[deps]
+
+source_file="res://imges/restart/restart-mask.png"
+dest_files=["res://.godot/imported/restart-mask.png-1b259e2c8db63b76304d8d32ba80879d.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

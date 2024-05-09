@@ -1,0 +1,226 @@
+[gd_scene load_steps=23 format=3 uid="uid://b4diegd2gcglp"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_4c7re"]
+[ext_resource type="Texture2D" uid="uid://dq64hahhbh7vu" path="res://imges/cancel/cancel.png" id="1_cv6cl"]
+[ext_resource type="BitMap" uid="uid://bh4sa4pckstle" path="res://imges/cancel/cancel-mask.png" id="2_go7er"]
+[ext_resource type="Texture2D" uid="uid://dca0fx1fyjjpd" path="res://imges/poweroff/poweroff.png" id="2_ofxa0"]
+[ext_resource type="BitMap" uid="uid://85muy4sj6043" path="res://imges/poweroff/poweroff-mask.png" id="3_ysqco"]
+[ext_resource type="Script" path="res://poweroff.gd" id="4_si0sq"]
+[ext_resource type="Texture2D" uid="uid://copnr6wp4rvud" path="res://blackscreen.png" id="5_25v13"]
+[ext_resource type="Script" path="res://dark.gd" id="5_kv7an"]
+[ext_resource type="Texture2D" uid="uid://qfmv8sw73lsl" path="res://imges/restart/restart.png" id="8_chlk3"]
+[ext_resource type="BitMap" uid="uid://uojyu1feuamq" path="res://imges/restart/restart-mask.png" id="9_f3sc1"]
+[ext_resource type="Script" path="res://restart.gd" id="10_8u3ps"]
+[ext_resource type="Texture2D" uid="uid://djdaq8twfih6f" path="res://imges/logout/logout.png" id="10_xcbmd"]
+[ext_resource type="BitMap" uid="uid://d2eu0cmrkg4mw" path="res://imges/logout/logout-mask.png" id="11_beg71"]
+[ext_resource type="Script" path="res://buttons.gd" id="13_qrvq4"]
+[ext_resource type="Script" path="res://logout.gd" id="13_v631h"]
+[ext_resource type="Script" path="res://buttons-cancel.gd" id="15_cuot5"]
+
+[sub_resource type="Animation" id="Animation_wr3gd"]
+resource_name = "buttons"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cancel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(0.0769465, 1),
+"update": 0,
+"values": [Vector2(-500, 500), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("poweroff:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(0.225312, 1),
+"update": 0,
+"values": [Vector2(-500, -500), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("restart:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(0.225313, 1),
+"update": 0,
+"values": [Vector2(500, -500), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("logout:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(0.15932, 1),
+"update": 0,
+"values": [Vector2(500, 500), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmmha"]
+_data = {
+"buttons": SubResource("Animation_wr3gd")
+}
+
+[sub_resource type="Animation" id="Animation_ubnyx"]
+resource_name = "dark"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blackscreen:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(9.84915, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.333333)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xsd0o"]
+_data = {
+"dark": SubResource("Animation_ubnyx")
+}
+
+[sub_resource type="Animation" id="Animation_gfhcb"]
+resource_name = "buttons-closed"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("poweroff:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(5.46416, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-500, -500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cancel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(2.82843, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-500, 500)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("restart:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(6.06287, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(500, -500)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("logout:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(12.996, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(500, 500)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blackscreen:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.333333), Color(1, 1, 1, 0.00325441)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iqw8p"]
+_data = {
+"buttons-closed": SubResource("Animation_gfhcb")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4c7re")
+
+[node name="Blackscreen" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.333333)
+position = Vector2(982, 536)
+scale = Vector2(1.16823, 1.14167)
+texture = ExtResource("5_25v13")
+
+[node name="poweroff" type="TextureButton" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("2_ofxa0")
+texture_click_mask = ExtResource("3_ysqco")
+script = ExtResource("4_si0sq")
+
+[node name="cancel" type="TextureButton" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("1_cv6cl")
+texture_click_mask = ExtResource("2_go7er")
+
+[node name="restart" type="TextureButton" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("8_chlk3")
+texture_click_mask = ExtResource("9_f3sc1")
+script = ExtResource("10_8u3ps")
+
+[node name="logout" type="TextureButton" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("10_xcbmd")
+texture_click_mask = ExtResource("11_beg71")
+script = ExtResource("13_v631h")
+
+[node name="buttons" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kmmha")
+}
+script = ExtResource("13_qrvq4")
+
+[node name="dark" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xsd0o")
+}
+script = ExtResource("5_kv7an")
+
+[node name="buttons-cancel" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iqw8p")
+}
+script = ExtResource("15_cuot5")
+
+[connection signal="pressed" from="poweroff" to="poweroff" method="_on_pressed"]
+[connection signal="pressed" from="cancel" to="cancel" method="_on_pressed"]
+[connection signal="pressed" from="cancel" to="buttons-cancel" method="_on_cancel_pressed"]
+[connection signal="pressed" from="restart" to="restart" method="_on_pressed"]
+[connection signal="pressed" from="logout" to="logout" method="_on_pressed"]
+[connection signal="animation_finished" from="buttons-cancel" to="buttons-cancel" method="_on_animation_finished"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://85muy4sj6043"
+path="res://.godot/imported/poweroff-mask.png-6f0e72bceadcc32de63cf5381c8c223b.res"
+
+[deps]
+
+source_file="res://imges/poweroff/poweroff-mask.png"
+dest_files=["res://.godot/imported/poweroff-mask.png-6f0e72bceadcc32de63cf5381c8c223b.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

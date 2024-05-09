@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://d2eu0cmrkg4mw"
+path="res://.godot/imported/logout-mask.png-041eaa6e65cd3ed6dac8e5b950c0310c.res"
+
+[deps]
+
+source_file="res://imges/logout/logout-mask.png"
+dest_files=["res://.godot/imported/logout-mask.png-041eaa6e65cd3ed6dac8e5b950c0310c.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
