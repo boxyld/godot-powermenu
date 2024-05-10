@@ -1,0 +1,2 @@
+pkill -u $(whoami)
+
